@@ -1,0 +1,73 @@
+<div class="content-wrapper">
+    <div class="container">
+
+        <!--INICIO DO CONTEUDO-->
+        <section class="content-header">
+        </section>
+
+        <section class="content">
+            <section class="invoice">
+
+                <form>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="page-header">
+                                <i class="fa fa-usd" aria-hidden="true"></i> Livraria
+                            </h2>
+                        </div>
+                    </div>
+
+                    <div class="row invoice-info">
+                        <div class="col-xs-12">
+                            <p class="lead">Livro:</p>
+                        </div>
+                        <div class="col-sm-4 col-xs-12">
+                            <div class="form-group">
+                                <label class="control-label sr-only" for="inputCodigo"><i class="fa fa-check"></i> Código</label>
+                                <input type="number" class="form-control" id="inputCodigo" name="inputCodigo" [(ngModel)]="inputCodigo" placeholder="Código">
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <!-- <a href="order-summary.html" class="btn btn-success pull-left"><i class="fa fa-search" aria-hidden="true"></i> Pesquisar </a> -->
+                                <button type="button" (click)="consultar()" class="btn btn-success pull-left ">Pesquisar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+
+                    <!-- Table row -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <p class="lead">Informações:</p>
+                        </div>
+                        <div class="col-xs-12 table-responsive">
+
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Codigo</th>
+                                        <th>Titulo</th>
+                                        <th>Autor</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let livro of livros">
+                                        <td>{{livro?.id}}</td>
+                                        <td>{{livro?.titulo}}</td>
+                                        <td>{{livro?.autor}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </form>
+
+            </section>
+        </section>
+        <!-- FIM DO CONTEUDO-->
+    </div>
+    <!-- /.container -->
